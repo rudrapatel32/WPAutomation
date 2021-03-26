@@ -76,6 +76,7 @@ namespace DriverTestMethods.WPTests.MEPageTest
             catch (System.Exception e)
             {
                 extest.Log(Status.Pass, MethodBase.GetCurrentMethod().Name + " -- FAILED");
+                //Test Commit;
 
                 throw;
             }

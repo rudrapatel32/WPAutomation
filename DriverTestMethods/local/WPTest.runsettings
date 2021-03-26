@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RunSettings>
+  <TestRunParameters>
+    <Parameter name ="url" value="https://wordpress.com/log-in" />
+    <Parameter name ="urlMe" value="https://wordpress.com/me" />
+    <Parameter name ="browser" value="Chrome" />
+    <Parameter name ="username" value="rudrapatel32"/>
+    <Parameter name ="pwd" value="rR@1988832" />
+  <!---text-->
+  </TestRunParameters>
+</RunSettings>

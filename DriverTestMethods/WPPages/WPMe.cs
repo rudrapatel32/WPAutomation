@@ -15,7 +15,9 @@ namespace DriverTestMethods.WPPages
             this.driver = driver;
         }
         //[FindsBy(How=How.ClassName,Using= "form-label")]
-        public IWebElement aMySite => driver.FindElement(By.CssSelector("*[class='masterbar__item-content']"));
+        public IWebElement aMySite => driver.FindElement(By.XPath("//span[text()='My Site']"));
+        public IWebElement aReader => driver.FindElement(By.XPath("//span[text()='Reader']"));
+        public IWebElement lblusername => driver.FindElement(By.CssSelector("*[class='profile-gravatar__user-display-name']"));
 
         public IWebElement btnLogOut => driver.FindElement(By.CssSelector("*[class='button sidebar__me-signout-button is-compact']"));
 
@@ -25,6 +27,9 @@ namespace DriverTestMethods.WPPages
         public IWebElement txtDescription => driver.FindElement(By.Id("description"));
 
         public IWebElement aMyProfile => driver.FindElement(By.CssSelector("*[class='sidebar__menu-link-text menu-link-text']"));
+        public IWebElement aAccountSettings => driver.FindElement(By.XPath("//span[text()='Account Settings']"));
+        public IWebElement aPurchase => driver.FindElement(By.XPath("//span[text()='Purchases']"));
+        public IWebElement aSecurity => driver.FindElement(By.XPath("//span[text()='aSecurity']"));
 
         public IWebElement btnSaveProfile => driver.FindElement(By.CssSelector("*[class='button form-button is-primary']"));
         public IWebElement alertSave => driver.FindElement(By.CssSelector("*[class='notice__text']"));

@@ -68,10 +68,11 @@ namespace DriverTestMethods.WPTests.MEPageTest
             try
             {
                 extest = extentrpt.CreateTest(MethodBase.GetCurrentMethod().Name).Info(MethodBase.GetCurrentMethod().Name + "-- Started Execution");
-               // Assert.IsTrue(WP.lblFormHeader.Displayed);
-             //   Assert.IsTrue(WP.lblEmailAddUserr.Displayed);
-               // Assert.IsTrue(WP.txtUserNameOrEmail.Enabled);
-                //Assert.IsTrue(driver.Title.ToString().Contains("WordPress"));
+                Assert.IsTrue(WPWPMe.aMySite.Displayed);
+                Assert.IsTrue(WPWPMe.aReader.Displayed);
+                Assert.IsTrue(WPWPMe.aMyProfile.Displayed);
+                Assert.IsTrue(driver.Title.ToString().Contains("My Profile"));
+                Assert.IsTrue(WPWPMe.lblusername.Text.Contains(username));
             }
             catch (System.Exception e)
             {
@@ -120,10 +121,6 @@ namespace DriverTestMethods.WPTests.MEPageTest
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
 
             lg.ValidUserLogin();
-            //lg = new WPTests.LoginPageTest();
-            //lg = new WPTests.LoginPageTest();
-            //lg = new WPTests.LoginPageTest();
-            //lg = new WPTests.LoginPageTest();
         }
 
         [TearDown]
@@ -169,9 +166,6 @@ namespace DriverTestMethods.WPTests.MEPageTest
                         wAIT().Until(ExpectedConditions.ElementToBeClickable(WPMe.btnSaveProfile));
 
                         WPMe.btnSaveProfile.Click();
-                        //wAIT().Until(ExpectedConditions.ElementToBeClickable(WPMe.btnAddSite));
-//                        wAIT().Until(ExpectedConditions.ElementToBeClickable(WPMe.btnSaveProfile));
-
                         Assert.IsTrue(WPMe.alertSave.Displayed);
 
                         ///Assertion for saved records
@@ -185,18 +179,18 @@ namespace DriverTestMethods.WPTests.MEPageTest
                     case "delete":
                         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
 
-                        WPMe.txtFirstName.Clear();
-//                        WPMe.txtFirstName.SendKeys(Keys.Control + "a" + Keys.Backspace);
+                        //WPMe.txtFirstName.Clear();
+                        WPMe.txtFirstName.SendKeys(Keys.Control + "a" + Keys.Delete);
                         Thread.Sleep(1000);
 
                         //wAIT().Until(ExpectedConditions.ElementToBeClickable(WPMe.btnSaveProfile));
                         WPMe.txtLastName.Clear();
-  //                      WPMe.txtFirstName.SendKeys(Keys.Control + "a" + Keys.Backspace);
+                        WPMe.txtLastName.SendKeys(Keys.Control + "a" + Keys.Delete);
                         Thread.Sleep(1000);
 
 //                        wAIT().Until(ExpectedConditions.ElementToBeClickable(WPMe.btnSaveProfile));
-                        WPMe.txtDescription.Clear();
-    //                    WPMe.txtFirstName.SendKeys(Keys.Control + "a" + Keys.Backspace);
+                    //    WPMe.txtDescription.Clear();
+                        WPMe.txtDescription.SendKeys(Keys.Control + "a" + Keys.Delete);
                         Thread.Sleep(1000);
 
                         WPMe.btnSaveProfile.Click();
@@ -207,16 +201,12 @@ namespace DriverTestMethods.WPTests.MEPageTest
                         Assert.IsTrue(WPMe.alertSave.Displayed);
 
                         ///Assertion for saved records
-                        ///
-                        Assert.IsFalse(WPMe.txtFirstName.GetAttribute("value").Contains(firstname));
-                        Assert.IsFalse(WPMe.txtLastName.GetAttribute("value").Contains(lastname));
+                        Assert.IsTrue(WPMe.txtFirstName.GetAttribute("value").Contains(firstname));
+                        Assert.IsTrue(WPMe.txtLastName.GetAttribute("value").Contains(lastname));
                         Assert.IsFalse(WPMe.txtDescription.GetAttribute("value").Contains(description));
 
                         break;
                 }
-                //   Assert.IsTrue(WP.lblEmailAddUserr.Displayed);
-                // Assert.IsTrue(WP.txtUserNameOrEmail.Enabled);
-                //Assert.IsTrue(driver.Title.ToString().Contains("WordPress"));
             }
             catch (System.Exception e)
             {

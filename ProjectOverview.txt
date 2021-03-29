@@ -1,0 +1,5 @@
+Author: Rudra Patel
+Tools/Technologies: Selenium, nunit
+Language: C#
+Test Website: https://wordpress.com
+Test Module: My Profile

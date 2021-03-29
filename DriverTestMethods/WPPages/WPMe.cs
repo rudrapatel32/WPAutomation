@@ -39,6 +39,7 @@ namespace DriverTestMethods.WPPages
         public IWebElement lnkAddURL => driver.FindElement(By.XPath("//button[text()='Add URL']"));
 
         public IWebElement lblSiteTitle => driver.FindElement(By.XPath("//div[@class='site__title']"));
+        public IWebElement btnAddSites => driver.FindElement(By.XPath("//button[text()='Add Sites']"));
         public IWebElement btnAddSite => driver.FindElement(By.XPath("//button[text()='Add Site']"));
         public IWebElement btnCancel => driver.FindElement(By.XPath("//button[text()='Cancel']"));
         public IWebElement chkAddSitecheckbox => driver.FindElement(By.Name("site-191111456"));
@@ -46,6 +47,9 @@ namespace DriverTestMethods.WPPages
         public IWebElement lblDisplaymsg => driver.FindElement(By.XPath("//*[text()='Please enter the URL and description of the site you want to add to your profile.']"));
         public IWebElement txtEnterURL => driver.FindElement(By.XPath("//input[@name='value']"));
         public IWebElement txtEnterDescription => driver.FindElement(By.XPath("//input[@name='title']"));
+        public IWebElement ayourprofile => driver.FindElement(By.XPath("//a[text()='your profile']"));
+        public IWebElement agravatar => driver.FindElement(By.XPath("//a[text()='Gravatar Hovercards']"));
+
         ////[FindsBy(How = How.ClassName, Using = "login__form-header")]
         //public IWebElement lblEmailAddUserr => driver.FindElement(By.XPath("//button[text()='Continue']"));
 
